@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './components/pages/loginPage/loginPage';
 import StudentHomepage from './components/pages/studentHomepage/studentHomepage';
 import TeacherHomepage from './components/pages/teacherHomepage/teacherHomepage';
@@ -8,7 +8,7 @@ import TestPage from './components/pages/TakeTest/TestPage';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter basename="/portal">
       <Routes>
         <Route exact path='/' element={<LoginPage/>}/>
         <Route exact path='/homeStudent' element={<StudentHomepage/>}/>
@@ -16,7 +16,7 @@ function App() {
         <Route exact path='/studentRegisterPage' element={<StudentRegisterPage/>}/>
         <Route exact path='/takeTestPage' element={<TestPage/>}/>
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
